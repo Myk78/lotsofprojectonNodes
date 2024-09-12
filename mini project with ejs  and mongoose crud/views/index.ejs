@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html,
+      body {
+        height: 100%; /* Ensure both html and body take up the full height */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="h-full w-full bg-zinc-900 p-10 text-white">
+      <div class="nav mb-10">
+        <a href="/read" class="text-blue-500">Listed User</a>
+      </div>
+      <h1 class="text-2xl tracking-tighter mb-3">Create User</h1>
+      <form action="/create" method="post">
+        <input
+          class="px-5 py-3 mt-2 border-2 border-zinc-800 outline-none rounded-lg bg-transparent"
+          type="text"
+          name="name"
+          id=""
+          placeholder="Enter your Name"
+        />
+        <input
+          class="px-5 py-3 mt-2 border-2 border-zinc-800 outline-none rounded-lg bg-transparent"
+          type="text"
+          name="email"
+          id=""
+          placeholder="Enter your email"
+        />
+        <input
+          class="px-5 py-3 mt-2 border-2 border-zinc-800 outline-none rounded-lg bg-transparent"
+          type="text"
+          name="description"
+          id=""
+          placeholder="best quote of user"
+        />
+        <input
+          class="px-5 py-3 mt-2 border-2 border-zinc-800 outline-none rounded-lg bg-transparent"
+          type="text"
+          name="image"
+          id=""
+          placeholder="Image"
+        />
+        <input
+          class="bg-gray-600 px-5 py-3 rounded-md mt-3"
+          type="submit"
+          value="Add user"
+        />
+      </form>
+    </div>
+  </body>
+</html>

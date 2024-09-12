@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      html,
+      body {
+        height: 100%; /* Ensure both html and body take up the full height */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="min-h-screen w-full bg-zinc-900 p-10 text-white">
+      <a href="/" class="text-blue-500">back to home</a>
+      <h1 class="text-2xl tracking-tighter mb- mt-3">All listed User</h1>
+      <div class="users flex gap-3 flex-wrap">
+        <% users.forEach(function(val){ %>
+        <div class="user w-64 p-4 bg-zinc-800 rounded-lg">
+          <div class="w-full h-52 rounded-lg bg-red-500 overflow-hidden">
+            <img
+              src="<%= val.image %>"
+              class="w-full h-full object-cover"
+              alt=""
+            />
+          </div>
+          <h3 class="text-xl mt-3 tracking-tighter"><%= val.name %></h3>
+          <h5 class="text-zinc-500"><%= val.email %></h5>
+          <% if(val.description?.length > 0){ %>
+          <p class="text-zinc-500 tracking-tighter text-sm">
+            <%= val.description %>
+          </p>
+          <% }else{ %>
+          <p class="text-zinc-500 tracking-tighter text-sm">NO mention yet ?</p>
+          <% }%>
+
+          <div class="gap-3 mt-3">
+            <a href="/edit/<%= val._id%>" class="text-zinc-600">Edit User</a>
+            <a href="/delete/<%= val._id %> " class="text-red-400"
+              >Delete User</a
+            >
+          </div>
+        </div>
+        <% }) %>
+      </div>
+    </div>
+  </body>
+</html>
