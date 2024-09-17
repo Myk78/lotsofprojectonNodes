@@ -7,7 +7,8 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
-    <div class="w-full h-screen bg-zinc-900 p-10 text-white">
+    <div class="w-full h-screen bg-zinc-900 text-white p-10">
+      <h3 class="text-2xl">Create User Account</h3>
       <form action="/create" method="post">
         <input
           class="px- py-2 rounded-md outline-none bg-transparent border] border-zinc-800 border-2"
@@ -39,8 +40,15 @@
           name="age"
           placeholder="Enter Your age"
         />
-        <input class="px-5 py-3" type="submit" value="Create User" />
+        <input
+          class="px-5 py-2 bg-gray-500 rounded-md"
+          type="submit"
+          value="Create User"
+        />
       </form>
+      <div class="px-5 mt-3 w-24 py-2 bg-blue-500 rounded-md">
+        <a href="/login">Login</a>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="w-full h-screen bg-zinc-900 text-white p-10">
+      <div class="flex justify-end">
+        <a
+          href="/profile"
+          class="bg-blue-500 px-3 py-2 rounded-md inline-block text-sm mb-5"
+          >Back</a
+        >
+      </div>
+
+      <h3 class="text-3xl">
+        <span class="font-light">So you Edit your Post,</span><%=
+        editpost.user.name %>
+      </h3>
+      <h5 class="mb-5">Let's Change Something in your Post</h5>
+      <form method="post" action="/editPost/<%= editpost.id %>">
+        <textarea
+          placeholder="What's you post Today"
+          class="block resize-none px-1 bg-transparent border-2 border-zinc-800 rounded-md outline-none"
+          action="/createPost"
+          name="content"
+        >
+        <%= editpost.content %></textarea
+        >
+        <input
+          type="submit"
+          value="Post"
+          class="bg-blue-500 px-4 py-2 rounded-md mt-2"
+        />
+      </form>
+    </div>
+  </body>
+</html>
